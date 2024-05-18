@@ -6,8 +6,10 @@ public class InteractableMovingBox : Interactable
 {
     Vector2 Direction;
     [SerializeField] Rigidbody2D Rb;
+    [SerializeField] Collider2D Collider;
     [SerializeField] float Speed;
     public override void Interact(Player player){
+        Rb.bodyType=RigidbodyType2D.Dynamic;
         if(Mathf.Abs(player.transform.parent.position.x-transform.position.x)>Mathf.Abs(player.transform.parent.position.y-transform.position.y)){
             if(player.transform.parent.position.x-transform.position.x>0){
                 Direction=Vector2.right;
@@ -32,5 +34,10 @@ public class InteractableMovingBox : Interactable
     void FixedUpdate()
     {
         Rb.velocity=Direction*Speed;
+        RaycastHit2D Hit=Physics2D.Raycast(transform.position,Direction*Collider.bounds.extents);
+        if(Hit){
+            Direction=Vector2.zero;
+            Rb.bodyType=RigidbodyType2D.Static;
+        }
     }
 }

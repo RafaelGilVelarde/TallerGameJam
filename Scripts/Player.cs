@@ -15,13 +15,13 @@ public class Player : MonoBehaviour
 
     [SerializeField] Animator Animator;
     [SerializeField] Rigidbody2D Rb;
-    [SerializeField] KeyCode InteractKey;
     [SerializeField] SpriteRenderer Sprite;
 
 
     [SerializeField] float Speed, h, v;
     [SerializeField] Direction Direction;
 
+    [SerializeField] public KeyCode InteractKey;
     [SerializeField] public List<Item> Items;
     [SerializeField] public Interactable Interact;
     [SerializeField] public bool Controllable;
