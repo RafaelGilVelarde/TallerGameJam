@@ -2,6 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum Direction
+{
+    Up,
+    Down,
+    Side
+}
+
 public class Player : MonoBehaviour
 {
     public static Player player;
@@ -12,8 +19,10 @@ public class Player : MonoBehaviour
 
 
     [SerializeField] float Speed, h, v;
+    [SerializeField] Direction Direction;
 
     [SerializeField] public List<Item> Items;
+    [SerializeField] public Interactable Interact;
 
     // Start is called before the first frame update
     void Start()
@@ -26,6 +35,13 @@ public class Player : MonoBehaviour
     {
         h = Input.GetAxis("Horizontal");
         v = Input.GetAxis("Vertical");
+        Animator.SetInteger("Dir",(int)Direction);
+        if (Input.GetKeyDown(InteractKey)){
+            if (Interact != null)
+            {
+                Interact.Interact(this);
+            }
+        }
     }
     private void FixedUpdate()
     {
