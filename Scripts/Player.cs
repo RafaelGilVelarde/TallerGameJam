@@ -25,6 +25,7 @@ public class Player : MonoBehaviour
     [SerializeField] public List<Item> Items;
     [SerializeField] public Interactable Interact;
     [SerializeField] public bool Controllable;
+    [SerializeField] Collider2D  InteractCollider;
     // Start is called before the first frame update
     /// <summary>
     /// Awake is called when the script instance is being loaded.
@@ -84,6 +85,8 @@ public class Player : MonoBehaviour
         if (h > 0 == Sprite.flipX && h!=0)
         {
             Sprite.flipX = !Sprite.flipX;
+            float positionX=InteractCollider.transform.position.x*-1;
+            InteractCollider.transform.position=new Vector2(positionX,InteractCollider.transform.position.y);
         }
     }
 
