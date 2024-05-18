@@ -24,12 +24,13 @@ public class RoomDoor : MonoBehaviour
         {
             Player.player.ChangeControllable();
             ScreenTransition.screenTransition.changeSignal += ChangeRoom;
+            ScreenTransition.screenTransition.Begin();
         }
     }
 
     public void ChangeRoom()
     {
-        Player.player.transform.position = Destination;
+        Player.player.transform.parent.position = Destination;
         Current.SetActive(false);
         NextRoom.SetActive(true);
         //NextRoom.GetComponentInChildren<CinemachineConfiner2D>().m_BoundingShape2D=NextRoom.GetComponent<PolygonCollider2D>();

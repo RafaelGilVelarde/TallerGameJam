@@ -26,6 +26,13 @@ public class Player : MonoBehaviour
     [SerializeField] public Interactable Interact;
     [SerializeField] public bool Controllable;
     // Start is called before the first frame update
+    /// <summary>
+    /// Awake is called when the script instance is being loaded.
+    /// </summary>
+    void Awake()
+    {
+        player=this;
+    }
     void Start()
     {
         
@@ -74,7 +81,7 @@ public class Player : MonoBehaviour
 
     void CheckFlip()
     {
-        if (h > 0 == !Sprite.flipX && h!=0)
+        if (h > 0 == Sprite.flipX && h!=0)
         {
             Sprite.flipX = !Sprite.flipX;
         }
