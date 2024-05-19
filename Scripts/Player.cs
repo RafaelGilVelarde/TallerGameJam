@@ -19,6 +19,7 @@ public class Player : MonoBehaviour
 
 
     [SerializeField] float Speed, h, v;
+    [SerializeField] bool Moving;
     [SerializeField] Direction Direction;
 
     [SerializeField] public KeyCode InteractKey;
@@ -48,6 +49,7 @@ public class Player : MonoBehaviour
             h = Input.GetAxis("Horizontal");
             v = Input.GetAxis("Vertical");
             Animator.SetInteger("Dir",(int)Direction);
+            Animator.SetBool("Moving",Moving);
 
             if (Input.GetKeyDown(InteractKey)){
                 if (Interact != null)
@@ -63,6 +65,7 @@ public class Player : MonoBehaviour
     private void FixedUpdate()
     {
         Rb.velocity = new Vector2(h, v) * Speed;
+
     }
 
     void ChooseDirection()
@@ -78,6 +81,12 @@ public class Player : MonoBehaviour
         else if (v < 0)
         {
             Direction = Direction.Down;
+        }
+
+        if(new Vector2(h,v)==Vector2.zero){
+            Moving=true;
+        }else{
+            Moving=false;
         }
     }
 
