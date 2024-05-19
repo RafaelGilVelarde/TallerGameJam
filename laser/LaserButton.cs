@@ -11,21 +11,19 @@ public class LaserButton : MonoBehaviour
     [SerializeField] float buttonPressVolume = 1.0f;
 
     private SpriteRenderer spriteRenderer;
-    private AudioSource audioSource;
+    [SerializeField] AudioSource audioSource;
     public bool isPressed = false;
 
     void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
         audioSource = gameObject.AddComponent<AudioSource>(); 
-        audioSource.clip = buttonPressSound;
         audioSource.volume = buttonPressVolume;
         UpdateButtonState();
     }
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("Button: "+collision);
         if(collision.CompareTag("Box")){
             collision.transform.parent.gameObject.GetComponent<InteractableMovingBox>().ClickButton();
             if (!isPressed)
