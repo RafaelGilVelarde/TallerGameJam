@@ -38,7 +38,6 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3336,7 +3335,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &121930698
 Transform:
   m_ObjectHideFlags: 0
@@ -10927,7 +10926,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.029991115, y: 0.32308996, z: -10}
+  m_LocalPosition: {x: -27.75598, y: -17.03834, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -25625,7 +25624,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1286278917
 Transform:
   m_ObjectHideFlags: 0
@@ -34922,10 +34921,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2080902154}
     m_Modifications:
+    - target: {fileID: 2993334966496102451, guid: 22fd6f5bdd49606489eeda43535a6718, type: 3}
+      propertyPath: laserSound
+      value: 
+      objectReference: {fileID: 8300000, guid: b3f7ebcfe0596204dbd1a19ab2236abe, type: 3}
     - target: {fileID: 3279182178511849149, guid: 22fd6f5bdd49606489eeda43535a6718, type: 3}
       propertyPath: m_Name
       value: laser
       objectReference: {fileID: 0}
+    - target: {fileID: 7188860425323951109, guid: 22fd6f5bdd49606489eeda43535a6718, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: b3f7ebcfe0596204dbd1a19ab2236abe, type: 3}
     - target: {fileID: 7433214816012509754, guid: 22fd6f5bdd49606489eeda43535a6718, type: 3}
       propertyPath: m_LocalPosition.x
       value: 3.1536853
@@ -40895,10 +40902,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1286278917}
     m_Modifications:
+    - target: {fileID: 2993334966496102451, guid: 22fd6f5bdd49606489eeda43535a6718, type: 3}
+      propertyPath: laserSound
+      value: 
+      objectReference: {fileID: 8300000, guid: b3f7ebcfe0596204dbd1a19ab2236abe, type: 3}
     - target: {fileID: 3279182178511849149, guid: 22fd6f5bdd49606489eeda43535a6718, type: 3}
       propertyPath: m_Name
       value: laser (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 7188860425323951109, guid: 22fd6f5bdd49606489eeda43535a6718, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: b3f7ebcfe0596204dbd1a19ab2236abe, type: 3}
     - target: {fileID: 7433214816012509754, guid: 22fd6f5bdd49606489eeda43535a6718, type: 3}
       propertyPath: m_LocalPosition.x
       value: -3.1599998
@@ -42340,10 +42355,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2003877056}
     m_Modifications:
+    - target: {fileID: 2993334966496102451, guid: 22fd6f5bdd49606489eeda43535a6718, type: 3}
+      propertyPath: laserSound
+      value: 
+      objectReference: {fileID: 8300000, guid: b3f7ebcfe0596204dbd1a19ab2236abe, type: 3}
     - target: {fileID: 3279182178511849149, guid: 22fd6f5bdd49606489eeda43535a6718, type: 3}
       propertyPath: m_Name
       value: laser (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 7188860425323951109, guid: 22fd6f5bdd49606489eeda43535a6718, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: b3f7ebcfe0596204dbd1a19ab2236abe, type: 3}
     - target: {fileID: 7433214816012509754, guid: 22fd6f5bdd49606489eeda43535a6718, type: 3}
       propertyPath: m_LocalScale.x
       value: 1
@@ -43278,7 +43301,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2003877056
 Transform:
   m_ObjectHideFlags: 0
@@ -44207,7 +44230,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2080902154
 Transform:
   m_ObjectHideFlags: 0
