@@ -22,6 +22,7 @@ public class followIA : MonoBehaviour
     void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
+        player=Player.player.transform;
     }
 
     void Update()

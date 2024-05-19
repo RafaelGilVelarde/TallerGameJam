@@ -47,7 +47,6 @@ public class InteractableMovingBox : Interactable
     /// </summary>
     void FixedUpdate()
     {
-        Debug.DrawRay(transform.position,Direction*Collider.bounds.extents,Color.green);
         switch(Rb.bodyType){
             case RigidbodyType2D.Kinematic:
                 Rb.velocity=Direction*Speed;
