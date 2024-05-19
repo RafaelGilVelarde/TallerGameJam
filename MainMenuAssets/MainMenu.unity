@@ -1713,7 +1713,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Nuevo Horizonte
+  m_text: 'Boundless expedition
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 89996211a6469be40bb720bfcb84f6bf, type: 2}
   m_sharedMaterial: {fileID: -617565631393656728, guid: 89996211a6469be40bb720bfcb84f6bf, type: 2}
