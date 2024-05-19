@@ -5,8 +5,7 @@ using UnityEngine;
 
 public class RoomDoor : MonoBehaviour
 {
-    [SerializeField] Vector2 Destination;
-    [SerializeField] GameObject Current, NextRoom;
+    [SerializeField] GameObject Current, NextRoom, DestinationPosition;
     // Start is called before the first frame update
     void Start()
     {
@@ -30,11 +29,12 @@ public class RoomDoor : MonoBehaviour
 
     public void ChangeRoom()
     {
-        Player.player.transform.parent.position = Destination;
+        Player.player.transform.parent.position = DestinationPosition.transform.position;
         Current.SetActive(false);
         NextRoom.SetActive(true);
         //NextRoom.GetComponentInChildren<CinemachineConfiner2D>().m_BoundingShape2D=NextRoom.GetComponent<PolygonCollider2D>();
         Player.player.ChangeControllable();
         ScreenTransition.screenTransition.changeSignal -= ChangeRoom;
+        Debug.Log("Player controllable");
     }
 }

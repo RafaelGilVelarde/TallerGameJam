@@ -41,5 +41,6 @@ public class ScreenTransition : MonoBehaviour
     public void EmitChangeSignal()
     {
         changeSignal.Invoke();
+        Debug.Log("Changing");
     }
 }
