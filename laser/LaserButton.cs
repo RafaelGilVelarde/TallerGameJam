@@ -7,13 +7,19 @@ public class LaserButton : MonoBehaviour
     public LaserTrap laserTrap;
     public Sprite buttonPressedSprite;
     public Sprite buttonUnpressedSprite;
+    public AudioClip buttonPressSound;
+    [SerializeField] float buttonPressVolume = 1.0f;
 
     private SpriteRenderer spriteRenderer;
+    private AudioSource audioSource;
     public bool isPressed = false;
 
     void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
+        audioSource = gameObject.AddComponent<AudioSource>(); 
+        audioSource.clip = buttonPressSound;
+        audioSource.volume = buttonPressVolume;
         UpdateButtonState();
     }
 
@@ -29,7 +35,7 @@ public class LaserButton : MonoBehaviour
                 {
                     laserTrap.ToggleLaser();
                 }
-
+                PlayButtonSound();
                 UpdateButtonState();
             }
         }
@@ -51,5 +57,13 @@ public class LaserButton : MonoBehaviour
     void UpdateButtonState()
     {
         spriteRenderer.sprite = isPressed ? buttonPressedSprite : buttonUnpressedSprite;
+    }
+
+    void PlayButtonSound()
+    {
+        if (audioSource.clip != null)
+        {
+            audioSource.Play();
+        }
     }
 }

@@ -10,14 +10,22 @@ public class LaserTrap : MonoBehaviour
     public Sprite spriteOff;
     public bool isOn = true;
 
+    public AudioClip laserSound;//Sonido
+    public float volume = 1.0f;
+
 
     private SpriteRenderer spriteRenderer;
     private Collider2D collider2D;
+    private AudioSource audioSource;
 
     void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
         collider2D = GetComponent<Collider2D>();
+        audioSource = gameObject.AddComponent<AudioSource>();
+        audioSource.clip = laserSound;
+        audioSource.loop = true; // Hacer que el sonido se reproduzca en bucle
+        audioSource.volume = volume; // Configura el volumen del sonido
         UpdateLaserState();
     }
 
@@ -27,6 +35,15 @@ public class LaserTrap : MonoBehaviour
         UpdateLaserState();
 
         collider2D.enabled = isOn;
+
+        if (isOn)
+        {
+            audioSource.Play(); 
+        }
+        else
+        {
+            audioSource.Stop(); 
+        }
     }
 
     void UpdateLaserState()
