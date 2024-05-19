@@ -133,6 +133,7 @@ MonoBehaviour:
   Items: []
   Interact: {fileID: 0}
   Controllable: 1
+  InteractCollider: {fileID: 8186664964510173355}
 --- !u!1 &646026299619487076
 GameObject:
   m_ObjectHideFlags: 0
