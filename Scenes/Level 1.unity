@@ -38,6 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3335,7 +3336,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &121930698
 Transform:
   m_ObjectHideFlags: 0
@@ -10926,7 +10927,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -27.75598, y: -17.03834, z: -10}
+  m_LocalPosition: {x: 0.029991115, y: 0.32308996, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -16653,6 +16654,10 @@ PrefabInstance:
       propertyPath: m_Offset.y
       value: 1.3521471
       objectReference: {fileID: 0}
+    - target: {fileID: 2309912029291262760, guid: a918e961681bb914c8e73dac75639eaf, type: 3}
+      propertyPath: timeBetweenShoots
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3578806606884200153, guid: a918e961681bb914c8e73dac75639eaf, type: 3}
       propertyPath: m_Name
       value: turret
@@ -19144,7 +19149,7 @@ AudioSource:
   m_GameObject: {fileID: 1107052523}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: 0ae6f85887ae3ab43916c580527d593b, type: 2}
   m_audioClip: {fileID: 8300000, guid: 71d5286fa3264a54baa0a731a2a385cf, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
@@ -25624,7 +25629,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1286278917
 Transform:
   m_ObjectHideFlags: 0
@@ -35508,7 +35513,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2195315857131266443, guid: a918e961681bb914c8e73dac75639eaf, type: 3}
       propertyPath: m_Size.x
-      value: 4.593357
+      value: 9.8691635
       objectReference: {fileID: 0}
     - target: {fileID: 2195315857131266443, guid: a918e961681bb914c8e73dac75639eaf, type: 3}
       propertyPath: m_Size.y
@@ -35516,11 +35521,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2195315857131266443, guid: a918e961681bb914c8e73dac75639eaf, type: 3}
       propertyPath: m_Offset.x
-      value: 0
+      value: 2.6379032
       objectReference: {fileID: 0}
     - target: {fileID: 2195315857131266443, guid: a918e961681bb914c8e73dac75639eaf, type: 3}
       propertyPath: m_Offset.y
       value: 5.1352816
+      objectReference: {fileID: 0}
+    - target: {fileID: 2309912029291262760, guid: a918e961681bb914c8e73dac75639eaf, type: 3}
+      propertyPath: timeBetweenShoots
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3578806606884200153, guid: a918e961681bb914c8e73dac75639eaf, type: 3}
       propertyPath: m_Name
@@ -43301,7 +43310,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2003877056
 Transform:
   m_ObjectHideFlags: 0
@@ -44128,7 +44137,7 @@ AudioSource:
   m_GameObject: {fileID: 2069785960}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: 525348cb2b6ccf340a13ae47aee572d9, type: 2}
   m_audioClip: {fileID: 8300000, guid: 69f03569ea241a140a2f7f144a8e573d, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
@@ -44230,7 +44239,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2080902154
 Transform:
   m_ObjectHideFlags: 0
