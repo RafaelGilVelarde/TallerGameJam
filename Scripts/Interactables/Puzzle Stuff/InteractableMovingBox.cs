@@ -9,25 +9,35 @@ public class InteractableMovingBox : Interactable
     [SerializeField] Rigidbody2D Rb;
     [SerializeField] Collider2D Collider;
     [SerializeField] float Speed;
+    [SerializeField] public bool ClickedButton;
+    Vector2 OriginPosition;
+
+    void Start()
+    {
+        OriginPosition=transform.position;
+        ScreenTransition.screenTransition.changeSignal+=OnRoomExit;
+    }
     public override void Interact(Player player){
-        Rb.bodyType=RigidbodyType2D.Dynamic;
-        Rb.gravityScale=0;
-        Rb.constraints=RigidbodyConstraints2D.FreezeRotation;
-        if(Mathf.Abs(player.transform.parent.position.x-transform.position.x)>Mathf.Abs(player.transform.parent.position.y-transform.position.y)){
-            if(player.transform.parent.position.x-transform.position.x>0){
-                Direction=Vector2.left;
+        if(!ClickedButton){
+            Rb.bodyType=RigidbodyType2D.Dynamic;
+            Rb.gravityScale=0;
+            Rb.constraints=RigidbodyConstraints2D.FreezeRotation;
+            if(Mathf.Abs(player.transform.parent.position.x-transform.position.x)>Mathf.Abs(player.transform.parent.position.y-transform.position.y)){
+                if(player.transform.parent.position.x-transform.position.x>0){
+                    Direction=Vector2.left;
+                }
+                else{
+                    Direction=Vector2.right;
+                }
             }
             else{
-                Direction=Vector2.right;
+                if(player.transform.parent.position.y-transform.position.y>0){
+                    Direction=Vector2.down;
+                }
+                else{
+                    Direction=Vector2.up;
+                }            
             }
-        }
-        else{
-            if(player.transform.parent.position.y-transform.position.y>0){
-                Direction=Vector2.down;
-            }
-            else{
-                Direction=Vector2.up;
-            }            
         }
     }
 
@@ -47,6 +57,17 @@ public class InteractableMovingBox : Interactable
                     Rb.bodyType=RigidbodyType2D.Static;
                 }
             break;
+        }
+    }
+
+    public void ClickButton(){
+        ClickedButton=true;
+        Rb.bodyType=RigidbodyType2D.Static;
+    }
+
+    public void OnRoomExit(){
+        if(!ClickedButton){
+            transform.position=OriginPosition;
         }
     }
 }

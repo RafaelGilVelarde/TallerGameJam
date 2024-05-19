@@ -5,14 +5,16 @@ using UnityEngine;
 public class shootIA : MonoBehaviour
 {
     [SerializeField] private GameObject projectilePrefab;
-    [SerializeField] private float timeBetweenShoots;
+    [SerializeField] private float timeBetweenShoots, timer;
+
+    [SerializeField] followIA Turret;
     
     void Start()
     {
-        StartCoroutine(Shoot());
+        //StartCoroutine(Shoot());
     }
 
-    IEnumerator Shoot()
+    /*IEnumerator Shoot()
     {
         while (true)
         {
@@ -20,5 +22,20 @@ public class shootIA : MonoBehaviour
             Instantiate(projectilePrefab, transform.position, Quaternion.identity);
         }
         
+    }*/
+    void Update()
+    {
+            switch(Turret.turretState){
+                case TurretState.Idle:
+                break;
+
+                case TurretState.Shoot:
+                    timer+=Time.deltaTime;
+                    if(timer>=timeBetweenShoots){
+                        timer=0;
+                        Instantiate(projectilePrefab, transform.position, Quaternion.identity,transform.parent);
+                    }
+                break;
+            }
     }
 }

@@ -17,11 +17,27 @@ public class LaserButton : MonoBehaviour
         UpdateButtonState();
     }
 
-    void OnCollisionEnter2D(Collision2D collision)
+    void OnTriggerEnter2D(Collider2D collision)
     {
-        if (!isPressed)
-        {
-            isPressed = true;
+        if(collision.CompareTag("Box")){
+            collision.gameObject.GetComponent<InteractableMovingBox>().ClickButton();
+            if (!isPressed)
+            {
+                isPressed = true;
+                if (laserTrap != null)
+                {
+                    laserTrap.ToggleLaser();
+                }
+
+                UpdateButtonState();
+            }
+        }
+    }
+
+    void OnTriggerExit2D(Collider2D collision)
+    {
+        if(collision.CompareTag("Box")){
+            isPressed = false;
             if (laserTrap != null)
             {
                 laserTrap.ToggleLaser();
@@ -29,17 +45,6 @@ public class LaserButton : MonoBehaviour
 
             UpdateButtonState();
         }
-    }
-
-    void OnCollisionExit2D(Collision2D collision)
-    {
-        isPressed = false;
-        if (laserTrap != null)
-        {
-            laserTrap.ToggleLaser();
-        }
-
-        UpdateButtonState();
     }
 
     void UpdateButtonState()
