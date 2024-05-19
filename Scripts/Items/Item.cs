@@ -5,7 +5,7 @@ using UnityEngine;
 [System.Serializable]
 public class Item 
 {
-    [SerializeField] ItemBase Base;
+    [SerializeField] public ItemBase Base;
     // Start is called before the first frame update
     void Start()
     {

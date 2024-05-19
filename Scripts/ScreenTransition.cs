@@ -5,7 +5,7 @@ using UnityEngine;
 public class ScreenTransition : MonoBehaviour
 {
     public static ScreenTransition screenTransition;
-    [SerializeField] Animator Animator;
+    [SerializeField] Animator animator;
     public delegate void ChangeSignal();
     public ChangeSignal changeSignal;
 
@@ -35,7 +35,7 @@ public class ScreenTransition : MonoBehaviour
     }
     public void Begin()
     {
-        Animator.Play("Transition");
+        animator.SetTrigger("Start");
     }
     
     public void EmitChangeSignal()

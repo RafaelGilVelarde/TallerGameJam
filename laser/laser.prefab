@@ -102,7 +102,7 @@ MonoBehaviour:
   spriteOn: {fileID: 1750783497, guid: a5e3ea5b66700184698a79328602f950, type: 3}
   spriteOff: {fileID: -1347435414, guid: a5e3ea5b66700184698a79328602f950, type: 3}
   isOn: 1
-  laserSound: {fileID: 8300000, guid: 87919b51d2a8cef4aa874d52d7f1e41d, type: 3}
+  laserSound: {fileID: 8300000, guid: 69f03569ea241a140a2f7f144a8e573d, type: 3}
   volume: 1
   audioSource: {fileID: 7188860425323951109}
 --- !u!61 &2548915301912085432
@@ -160,11 +160,11 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 87919b51d2a8cef4aa874d52d7f1e41d, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 69f03569ea241a140a2f7f144a8e573d, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.654
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0

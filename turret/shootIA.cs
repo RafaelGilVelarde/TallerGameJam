@@ -6,6 +6,7 @@ public class shootIA : MonoBehaviour
 {
     [SerializeField] private GameObject projectilePrefab;
     [SerializeField] private float timeBetweenShoots, timer;
+    [SerializeField] AudioSource audio;
 
     [SerializeField] followIA Turret;
     
@@ -34,6 +35,7 @@ public class shootIA : MonoBehaviour
                     if(timer>=timeBetweenShoots){
                         timer=0;
                         Instantiate(projectilePrefab, transform.position, Quaternion.identity,transform.parent);
+                        audio.Play();
                     }
                 break;
             }

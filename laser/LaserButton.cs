@@ -17,7 +17,6 @@ public class LaserButton : MonoBehaviour
     void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
-        audioSource = gameObject.AddComponent<AudioSource>(); 
         audioSource.volume = buttonPressVolume;
         UpdateButtonState();
     }
@@ -59,6 +58,7 @@ public class LaserButton : MonoBehaviour
 
     void PlayButtonSound()
     {
+        Debug.Log(audioSource.clip);
         if (audioSource.clip != null)
         {
             audioSource.Play();

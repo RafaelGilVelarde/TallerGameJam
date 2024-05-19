@@ -8,6 +8,9 @@ public class DialogueBox : MonoBehaviour
     [SerializeField] TextMeshProUGUI Text;
     [SerializeField] float TextSpeed;
     [SerializeField] public List<string> DialogueStrings;
+
+    public delegate void DialogueEnd();
+    public DialogueEnd dialogueEnd;
     int DialogueIndex = -1;
 
     bool HasFinished;
@@ -49,6 +52,9 @@ public class DialogueBox : MonoBehaviour
         DialogueIndex=-1;
         transform.GetChild(0).gameObject.SetActive(false);
         this.enabled=false;
+        if(dialogueEnd!=null){
+            dialogueEnd.Invoke();
+        }
     }
     IEnumerator ShowDialogue(){
         Text.text="";

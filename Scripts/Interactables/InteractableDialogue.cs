@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class InteractableDialogue : Interactable
 {
-    [SerializeField] [TextArea] List<string> Dialogue;
+    [SerializeField] [TextArea] protected List<string> Dialogue;
     public override void Interact(Player player)
     {
         DialogueBox Aux=DialogueBox.Dialogue;

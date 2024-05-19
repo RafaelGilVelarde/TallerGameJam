@@ -22,7 +22,6 @@ public class LaserTrap : MonoBehaviour
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
         collider2D = GetComponent<Collider2D>();
-        audioSource = gameObject.AddComponent<AudioSource>();
         audioSource.clip = laserSound;
         audioSource.loop = true; // Hacer que el sonido se reproduzca en bucle
         audioSource.volume = volume; // Configura el volumen del sonido
@@ -55,7 +54,7 @@ public class LaserTrap : MonoBehaviour
     {
         if (other.CompareTag("Player"))//tag del jugador
         {
-            Debug.Log("Colision laser");
+            Player.player.Die();
         }
     }
 
