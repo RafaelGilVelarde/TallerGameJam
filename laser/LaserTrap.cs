@@ -16,7 +16,7 @@ public class LaserTrap : MonoBehaviour
 
     private SpriteRenderer spriteRenderer;
     private Collider2D collider2D;
-    private AudioSource audioSource;
+    [SerializeField] AudioSource audioSource;
 
     void Start()
     {
