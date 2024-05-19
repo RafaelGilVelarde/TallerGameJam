@@ -26,6 +26,7 @@ public class Player : MonoBehaviour
     [SerializeField] public Interactable Interact;
     [SerializeField] public bool Controllable;
     [SerializeField] Collider2D  InteractCollider;
+    [SerializeField] Collider2D Hitbox;
     // Start is called before the first frame update
     /// <summary>
     /// Awake is called when the script instance is being loaded.
@@ -82,11 +83,11 @@ public class Player : MonoBehaviour
 
     void CheckFlip()
     {
-        if (h > 0 == Sprite.flipX && h!=0)
+        if (h < 0 == (transform.parent.localScale.x==1) && h!=0)
         {
-            Sprite.flipX = !Sprite.flipX;
-            float positionX=InteractCollider.transform.position.x*-1;
-            InteractCollider.transform.position=new Vector2(positionX,InteractCollider.transform.position.y);
+            
+            float positionX = transform.parent.localScale.x*-1;
+            transform.parent.localScale=new Vector2(positionX,transform.parent.localScale.y);
         }
     }
 
@@ -95,8 +96,16 @@ public class Player : MonoBehaviour
         Controllable = !Controllable;
         if (!Controllable)
         {
+            Hitbox.enabled=false;
             h = 0;
             v = 0;
         }
+        else{
+            Hitbox.enabled=true;
+        }
+    }
+    public void Die(){
+        ChangeControllable();
+        ScreenTransition.screenTransition.Begin();
     }
 }

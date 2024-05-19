@@ -21,20 +21,17 @@ public class RoomDoor : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
+            RoomManager room= RoomManager.roomManager;
             Player.player.ChangeControllable();
-            ScreenTransition.screenTransition.changeSignal += ChangeRoom;
+            room.DestinationPosition=DestinationPosition;
+            room.Current=Current;
+            room.NextRoom=NextRoom;
+            //ScreenTransition.screenTransition.changeSignal += ChangeRoom;
             ScreenTransition.screenTransition.Begin();
         }
     }
 
     public void ChangeRoom()
     {
-        Player.player.transform.parent.position = DestinationPosition.transform.position;
-        Current.SetActive(false);
-        NextRoom.SetActive(true);
-        //NextRoom.GetComponentInChildren<CinemachineConfiner2D>().m_BoundingShape2D=NextRoom.GetComponent<PolygonCollider2D>();
-        Player.player.ChangeControllable();
-        ScreenTransition.screenTransition.changeSignal -= ChangeRoom;
-        Debug.Log("Player controllable");
     }
 }

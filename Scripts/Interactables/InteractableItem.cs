@@ -13,6 +13,13 @@ public class InteractableItem : Interactable
         {
             player.Items.Add(item);
             Interacted = true;
+            this.gameObject.SetActive(false);
+        }
+    }
+    void OnEnable()
+    {
+        if(Interacted){
+            this.gameObject.SetActive(false);
         }
     }
 }

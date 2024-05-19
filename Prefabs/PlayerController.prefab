@@ -125,7 +125,7 @@ MonoBehaviour:
   Animator: {fileID: 5140135051382036145}
   Rb: {fileID: 641906002186705455}
   Sprite: {fileID: 8894189084467522043}
-  Speed: 3
+  Speed: 5
   h: 0
   v: 0
   Direction: 0
@@ -134,6 +134,7 @@ MonoBehaviour:
   Interact: {fileID: 0}
   Controllable: 1
   InteractCollider: {fileID: 8186664964510173355}
+  Hitbox: {fileID: 6901942405905229850}
 --- !u!1 &646026299619487076
 GameObject:
   m_ObjectHideFlags: 0
@@ -146,7 +147,7 @@ GameObject:
   - component: {fileID: 6901942405905229850}
   m_Layer: 0
   m_Name: Hitbox
-  m_TagString: Untagged
+  m_TagString: PlayerHitbox
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -209,7 +210,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.6, y: 1}
+  m_Size: {x: 0.65, y: 1.05}
   m_EdgeRadius: 0
 --- !u!1 &1542841817336503110
 GameObject:
@@ -420,7 +421,7 @@ GameObject:
   - component: {fileID: 5747277690175997180}
   m_Layer: 0
   m_Name: Hurtbox
-  m_TagString: Untagged
+  m_TagString: PlayerHurtbox
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -447,7 +448,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9189110674201924890}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -483,5 +484,5 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.6, y: 1}
+  m_Size: {x: 0.65, y: 1.05}
   m_EdgeRadius: 0

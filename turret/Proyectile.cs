@@ -33,10 +33,31 @@ public class Proyectile : MonoBehaviour
     }
 
 
-    private void OnCollisionEnter2D()
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.CompareTag("PlayerHitbox")){
+            Debug.Log(this.gameObject);
+            Debug.Log(collision);
+            if(collision.transform.parent.GetComponent<Player>().Controllable){
+                collision.transform.parent.GetComponent<Player>().Die();
+
+            }
+            Destroy(gameObject);
+        }
+    }
+    void OnCollisionEnter2D(Collision2D other)
     {
         Destroy(gameObject);
     }
-
+    private void OnDisable() {
+        Destroy(gameObject);
+    }
+    /// <summary>
+    /// This function is called when the MonoBehaviour will be destroyed.
+    /// </summary>
+    void OnDestroy()
+    {
+        Debug.Log("Destroyed");
+    }
 
 }

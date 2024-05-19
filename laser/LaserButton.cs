@@ -19,8 +19,9 @@ public class LaserButton : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collision)
     {
+        Debug.Log("Button: "+collision);
         if(collision.CompareTag("Box")){
-            collision.gameObject.GetComponent<InteractableMovingBox>().ClickButton();
+            collision.transform.parent.gameObject.GetComponent<InteractableMovingBox>().ClickButton();
             if (!isPressed)
             {
                 isPressed = true;

@@ -10,6 +10,7 @@ public class InteractableMovingBox : Interactable
     [SerializeField] Collider2D Collider;
     [SerializeField] float Speed;
     [SerializeField] public bool ClickedButton;
+    [SerializeField] LayerMask ObstacleMask;
     Vector2 OriginPosition;
 
     void Start()
@@ -19,7 +20,7 @@ public class InteractableMovingBox : Interactable
     }
     public override void Interact(Player player){
         if(!ClickedButton){
-            Rb.bodyType=RigidbodyType2D.Dynamic;
+            Rb.bodyType=RigidbodyType2D.Kinematic;
             Rb.gravityScale=0;
             Rb.constraints=RigidbodyConstraints2D.FreezeRotation;
             if(Mathf.Abs(player.transform.parent.position.x-transform.position.x)>Mathf.Abs(player.transform.parent.position.y-transform.position.y)){
@@ -48,11 +49,10 @@ public class InteractableMovingBox : Interactable
     {
         Debug.DrawRay(transform.position,Direction*Collider.bounds.extents,Color.green);
         switch(Rb.bodyType){
-            case RigidbodyType2D.Dynamic:
+            case RigidbodyType2D.Kinematic:
                 Rb.velocity=Direction*Speed;
-                RaycastHit2D Hit=Physics2D.Raycast(transform.position,Direction,(Direction*Collider.bounds.extents).magnitude);
+                RaycastHit2D Hit=Physics2D.Raycast(transform.position,Direction,(Direction*Collider.bounds.extents).magnitude, ObstacleMask);
                 if(Hit){
-                    Debug.Log("Direction: "+Direction+" Collider: "+Hit.collider);
                     Direction=Vector2.zero;
                     Rb.bodyType=RigidbodyType2D.Static;
                 }
@@ -67,6 +67,7 @@ public class InteractableMovingBox : Interactable
 
     public void OnRoomExit(){
         if(!ClickedButton){
+            Rb.bodyType=RigidbodyType2D.Static;
             transform.position=OriginPosition;
         }
     }
